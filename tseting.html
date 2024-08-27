@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Entire Page Example</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .no-print {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .scrollable {
+            width: 100%;
+            height: 200px;
+            overflow: scroll;
+            border: 1px solid #ccc;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            /* Ensure all content is visible */
+            body {
+                overflow: visible;
+            }
+
+            /* Hide elements with the 'no-print' class */
+            .no-print, .no-print * {
+                display: none !important;
+            }
+
+            /* Make scrollable elements fully visible */
+            .scrollable {
+                overflow: visible !important;
+                height: auto !important;
+            }
+
+            /* Additional print styling */
+            h1 {
+                color: black;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">
+        <p>This section will not be printed.</p>
+    </div>
+
+    <h1>Content to Print</h1>
+    <p>This content will be printed, including the scrollable section below.</p>
+
+    <div class="scrollable">
+        <p>Line 1</p>
+        <p>Line 2</p>
+        <p>Line 3</p>
+        <p>Line 4</p>
+        <p>Line 5</p>
+        <p>Line 6</p>
+        <p>Line 7</p>
+        <p>Line 8</p>
+        <p>Line 9</p>
+        <p>Line 10</p>
+        <!-- Add more lines as needed to create scrollable content -->
+    </div>
+
+    <button onclick="window.print()">Print This Page</button>
+    <!-- <script>
+        function loadAllContent(callback) {
+            let totalHeight = 0;
+            const distance = 100;
+            const timer = setInterval(() => {
+                window.scrollBy(0, distance);
+                totalHeight += distance;
+        
+                if (totalHeight >= document.body.scrollHeight) {
+                    clearInterval(timer);
+                    if (callback) callback();
+                }
+            }, 100);
+        }
+        
+        document.getElementById('printButton').addEventListener('click', () => {
+            loadAllContent(() => {
+                window.print();
+            });
+        });
+        
+    </script> -->
+</body>
+</html>

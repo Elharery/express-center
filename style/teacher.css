@@ -1,0 +1,89 @@
+
+
+html{
+    
+    scroll-behavior: smooth;
+}
+.page{
+    max-height: 600px;
+    overflow: scroll;
+}
+.page .data{
+
+}
+.page .data .teacher-info
+,.teacher-inf{
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.page .data .teacher-info div h4 
+{
+    font-size: 15px;
+}
+.page .data .teacher-info div span{
+    font-size: 13px;
+    color: gray;
+}
+.page .data .teacher-info div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.page .data .students-info {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    gap: 10px;
+}
+.page .data .students-info .box h3{
+    border-bottom: 2px solid #eee;
+    padding:0 20px 20px 20px;
+}
+.page .data .students-info .box{
+    text-align: center;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 0 0 20px 0;
+}
+.page .data .students-info .box .stds{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+    padding-inline: 20px;
+}
+.page .data .students-info .box .stds a{
+    width: fit-content;
+    display: block;
+}
+.page .data .create-lesson{}
+.page .data .create-lesson div.table
+{
+    max-height: 500px;
+    overflow-y: scroll;
+}
+table td{
+    text-align: center;
+}
+
+/*  */
+
+
+.btnsubmit{
+    margin: 10px;
+    background-color: transparent;
+    transition: .3s;
+    cursor: pointer;
+    border: 2px solid #eee;
+    padding: 20px 15px;
+    border-radius: 7px;
+}
+.btnsubmit:hover{
+    background-color: #0075ff;
+    color: #fff;
+}
